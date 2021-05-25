@@ -1,0 +1,617 @@
+/* The below code is make the auto up onclick scrolling smooth */
+html {
+    scroll-behavior: smooth;
+
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#pageHolder {
+    /* margin:auto; */
+    width: 1240px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    /* transition: 0.5s; */
+}
+
+header {
+    border-bottom: 1px solid rgb(202, 202, 202);
+    background-color: white;
+    z-index: 2;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 10px;
+}
+
+#hamIcon {
+    margin: 1.3rem 1rem 0px 1.5rem;
+    /* display: inline; */
+    position: fixed;
+    top: 0rem;
+    left: 0px;
+    z-index: 5;
+    /* padding: 5px; */
+    background-color: white;
+    /* border-radius: 100%; */
+    /* border: 1px solid black; */
+
+}
+
+#hamIcon:active {
+    border: 1px solid black;
+}
+
+#hamIcon:hover {
+    cursor: pointer;
+}
+
+.bar {
+    background-color: black;
+    margin: 2px;
+    width: 20px;
+    height: 3px;
+    border-radius: 1000px;
+}
+
+#icon {
+    margin: 0px 2rem 0px 20px;
+}
+
+#btnsA {
+    display: flex;
+    margin: 20px 10px 10px 10px;
+}
+
+.btnA {
+    margin: 0px 20px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+#search {
+    width: auto;
+    height: 50px;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+    padding: 0px 20px;
+    background-color: rgb(238, 238, 238);
+    margin-top: 5px;
+    display: flex;
+}
+
+#searcher {
+    font-size: 1.2rem;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+.searchIcons {
+    width: 20px;
+    height: 20px;
+    margin: auto;
+}
+
+
+#btnsB {
+    margin-top: 0.5rem;
+    display: flex;
+}
+
+.btnB {
+    margin: 0.5rem 1rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.btnB:first-child {
+    font-weight: normal;
+    border: 1px solid rgb(190, 190, 190);
+    padding: 10px 30px;
+    border-radius: 50px;
+    margin-top: 0px;
+    display: flex;
+}
+
+#location {
+    width: 20px;
+    height: 20px;
+}
+
+.topIcons {
+    width: 24px;
+    height: 24px;
+}
+
+#topText {
+    margin: 40px 0px 25px 20px;
+    font-size: 0.9rem;
+}
+
+#contentBox {
+    margin: 80px 0px 0px 0px;
+}
+
+#writingBox {
+    margin-left: 12%;
+    margin-bottom: 2rem;
+}
+
+#head1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.text {
+    width: 40%;
+    height: auto;
+    font-size: 1.2rem;
+    color: rgb(93, 93, 93);
+}
+
+#secondNav {
+    display: grid;
+    grid-template-columns: 3fr 1.5fr;
+    grid-gap: 1rem;
+    background-color: white;
+    border-bottom: 1px solid rgb(212, 212, 212);
+    position: sticky;
+    top: 0rem;
+    left: 0rem;
+    right: 0rem;
+    padding-top: 3px;
+    padding-left: 3rem;
+}
+
+#navA {
+    display: flex;
+    overflow-x: scroll;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.navA-btns {
+    margin: auto 0.5rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 100px;
+    background-color: rgb(238, 238, 238);
+    font-weight: 550;
+    cursor: pointer;
+}
+
+.navA-btns:last-child {
+    display: flex;
+}
+
+#filterIcon {
+    margin: auto;
+    width: 20px;
+    height: 20px;
+}
+
+#navB {
+    display: flex;
+    justify-content: center;
+    padding-top: 0px;
+    margin: auto 1rem auto 0rem;
+    padding-bottom: 1rem;
+}
+
+.navB-btns {
+    margin: 0rem 5px;
+}
+
+.navB-btns:first-child {
+    color: rgb(144, 144, 144);
+}
+
+.navB-btns:nth-child(2) {
+    color: black;
+    text-decoration: underline;
+}
+
+.navB-btns:last-child {
+    color: black;
+    text-decoration: none;
+}
+
+.navB-btns:last-child:hover {
+    text-decoration: underline;
+}
+
+#itemBox {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgb(180, 180, 180);
+    margin: 2rem 0rem;
+}
+
+.item {
+    display: inline-block;
+    width: 18em;
+    height: 450px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.itemNav {
+    display: flex;
+    justify-content: space-between;
+    margin-left: -2px;
+}
+
+.tick {
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    background-color: transparent;
+}
+
+.itemImg {
+    width: 100%;
+    height: 250px;
+}
+
+.itemText {
+    font-size: 1.1rem;
+}
+
+.variantText {
+    margin: 0px 0px 10px 5px;
+}
+
+.variantBox {
+    margin: 5px 0px 20px 0px;
+    display: flex;
+}
+
+.variants {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+}
+
+.variants:hover {
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+#recommend {
+    font-size: 2rem;
+    margin: 50px 0px 40px 0px;
+}
+
+#recommendBox {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+}
+
+/* THe below codes are of footer  */
+
+footer {
+    background-color: rgb(224, 224, 224);
+    margin: 5rem 0rem 0px 0px;
+    width: 100%;
+    /* height: 600px; */
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+
+
+}
+
+#footerBox {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2em 0em 5em 0em;
+}
+
+.footItems {
+    display: inline-block;
+    margin: 1rem;
+    cursor: pointer;
+}
+
+.footItems:first-child {
+    width: 250px;
+    height: auto;
+}
+
+#footItemsHead1 {
+    font-size: 1.5rem;
+}
+
+.footText {
+    margin: 10px 0px 0px 10px;
+    font-size: 1.1rem;
+}
+
+#logIn {
+    background-color: black;
+    padding: 0.8rem 1rem;
+    border-radius: 50px;
+    color: white;
+    display: inline-block;
+    margin: 10px 0px;
+    text-decoration: none;
+}
+
+#seeMore {
+    color: black;
+}
+
+.footItemsHead {
+    font-size: 1.3rem;
+    margin: 0px 0px 10px 0px;
+}
+
+#belowContent {
+    display: block;
+    width: 90%;
+    margin: 6rem auto 0px auto;
+}
+
+.links {
+    display: block;
+    text-decoration: none;
+    margin: 5px 0px;
+    font-size: 1rem;
+    color: black;
+}
+
+#connect {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0rem 0rem 0rem 0rem;
+    width: 100%;
+}
+
+#connecter {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem;
+}
+
+.connecting {
+    margin: 0px 5px;
+}
+
+.connectionIcons {
+    width: 36px;
+    height: 36px;
+}
+
+.country {
+    margin: 1rem;
+    display: flex;
+    font-size: 1.2rem;
+    border: 2px solid rgb(156, 156, 156);
+    border-radius: 50px;
+    padding: 10px 20px 10px 5px;
+    cursor: pointer;
+}
+
+.globe {
+    width: 25px;
+    height: 25px;
+    margin: 0rem 0.5rem;
+}
+
+#bottomText {
+    padding: 20px 0px 50px 0px;
+    margin: 2rem 0rem 2rem 1rem;
+    border-top: 1px solid rgb(182, 182, 182);
+}
+
+.footOpener {
+    display: none;
+}
+
+/* the below codes are to make the opening menu  */
+
+#menuHolder {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 0pc;
+    height: 100%;
+    z-index: 10;
+    background-color: white;
+    box-shadow: 0px 20px 50px black;
+    margin: auto;
+    transition: 0.4s;
+}
+
+#close {
+    position: absolute;
+    top: 1%;
+    left: 20%;
+    font-size: 3rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#menuIcon {
+    margin: 1rem auto 2rem auto;
+    display: block;
+}
+
+.bigLinks {
+    font-size: 2.5em;
+    display: block;
+    text-align: center;
+    margin: 1rem 0rem;
+    cursor: pointer;
+}
+
+.smallLinks {
+    display: block;
+    text-align: center;
+    margin: 1rem 0rem;
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+}
+
+#firstLinks {
+    margin: 4rem 0rem;
+}
+
+#secondLinks {
+    margin: 2rem 0rem;
+}
+
+#cnBox {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+#menuCountry {
+    border-radius: 50px;
+    padding: 10px 20px;
+    border: 2px solid rgb(195, 195, 195);
+    display: inline-block;
+    color: rgb(92, 92, 92);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* The below code is of the button which scrolls the page to top */
+
+#toTop {
+    background-color: black;
+    color: white;
+    font-weight: bolder;
+    font-size: 1rem;
+    padding: 1rem 1.2rem;
+    border-radius: 100%;
+    position: fixed;
+    left: 2rem;
+    bottom: 2rem;
+    z-index: 20;
+    cursor: pointer;
+    transform: rotate(-90deg);
+    opacity: 0;
+    transition: 0.5s;
+    visibility: hidden;
+
+}
+
+/* The below code is for small screens */
+
+@media (max-width:1200px) {
+    #hamIcon {
+        margin: 3% 20px 0px 0px;
+        top: 0.5rem;
+        right: 1rem;
+        display: inline-block;
+    }
+
+    #head1,
+    .text {
+        margin: 0px 30px;
+    }
+
+    .text {
+        width: 60%;
+    }
+
+    #secondNav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 1.8% 0rem 0rem 0rem;
+    }
+
+    #navA {
+        width: 20rem;
+    }
+
+    #footerBox {
+        justify-content: none;
+    }
+
+    .footItemsHead {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #btnsA {
+
+        display: none;
+    }
+
+    .btnB {
+        margin: 10px;
+    }
+
+    #hamIcon {
+        left: inherit;
+        right: 0px;
+    }
+
+    .footItems {
+        display: block;
+        width: 100%;
+        overflow-y: hidden;
+        height: 30px;
+        color: black;
+        border-bottom: 1px solid gray;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.5rem
+    }
+
+    .footOpener {
+        transform: rotate(180deg);
+        display: inline-block;
+        margin-left: 1rem;
+        cursor: pointer;
+    }
+
+    .footItems:first-child {
+        width: 100%;
+        height: auto;
+        padding: 0rem 2rem;
+    }
+
+    .links {
+        margin: 1rem 0rem;
+    }
+}
