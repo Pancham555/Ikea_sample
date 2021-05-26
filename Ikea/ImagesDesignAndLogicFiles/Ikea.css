@@ -189,6 +189,8 @@ nav {
     padding: 0.5rem;
     position: relative;
     margin-bottom: 1rem;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
 }
 
 .navA-btns {
